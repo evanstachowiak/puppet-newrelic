@@ -26,7 +26,7 @@ class newrelic::params {
 
   # Fail if the OS is not Ubuntu/Debian
   case $::operatingsystem {
-    ubuntu, debian: {
+    /(?i-mx:ubuntu|debian)/: {
     }
     default: {
       fail("Unsupported platform: ${::operatingsystem}")
